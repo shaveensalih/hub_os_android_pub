@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.fragment.app.FragmentContainerView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/qr_code_fragment"
+    android:name="com.example.hub_os_device.ui.mainActivity.fragments.QrCodeFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_accent_gradient"
+    tools:showIn="@layout/fragment_apps" />

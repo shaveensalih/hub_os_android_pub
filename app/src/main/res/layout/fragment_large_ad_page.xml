@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    tools:context=".ui.mainActivity.fragments.LargeAdPage">
+
+    <GridLayout
+        android:id="@+id/grid_widgets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="5"
+        android:rowCount="2"
+        android:useDefaultMargins="true"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_rowSpan="1"
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="2"
+            android:backgroundTint="@android:color/transparent"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp">
+
+            <eightbitlab.com.blurview.BlurView
+                android:id="@+id/blurView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/weather_widget_fragment"
+                    android:name="com.example.hub_os_device.ui.mainActivity.fragments.WeatherWidgetFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp" />
+
+            </eightbitlab.com.blurview.BlurView>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/qr_card"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowSpan="2"
+            android:layout_rowWeight="2"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="2"
+            android:backgroundTint="@android:color/transparent"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp">
+
+            <eightbitlab.com.blurview.BlurView
+                android:id="@+id/blurView3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/qr_code_fragment"
+                    android:name="com.example.hub_os_device.ui.mainActivity.fragments.QrCodeFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                     />
+
+            </eightbitlab.com.blurview.BlurView>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/go_to_apps_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_rowSpan="2"
+            android:layout_rowWeight="2"
+            android:layout_columnSpan="1"
+            android:layout_columnWeight="1"
+            android:elevation="10dp"
+            app:cardBackgroundColor="@color/hub_accent_color_main"
+            app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_apps_icon"
+                android:contentDescription="@string/app_icon" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_rowSpan="1"
+            android:layout_rowWeight="1"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="2"
+            android:backgroundTint="@android:color/transparent"
+            android:elevation="10dp"
+            app:cardCornerRadius="10dp">
+
+            <eightbitlab.com.blurview.BlurView
+                android:id="@+id/blurView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/display_widgets_fragment"
+                    android:name="com.example.hub_os_device.ui.mainActivity.fragments.DisplayWidgetsFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </eightbitlab.com.blurview.BlurView>
+
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+
+    <com.example.hub_os_device.ui.components.VideoPlayerRecyclerView
+        android:id="@+id/largeAdRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/service_ll"
+        app:layout_constraintDimensionRatio="0.75"
+        app:layout_constraintTop_toBottomOf="@id/grid_widgets"
+        tools:listitem="@layout/recyclerview_ad_image_item" />
+
+    <LinearLayout
+        android:id="@+id/service_ll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:weightSum="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/largeAdRecyclerView">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/self_service_icon"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:tag="Self Service"
+            app:cardCornerRadius="14dp">
+
+            <ViewStub
+                android:id="@+id/self_service_stub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout="@layout/self_service_widget_content" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/broadcast_message_fragment"
+            android:name="com.example.hub_os_device.ui.mainActivity.fragments.BroadcastMessageFragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

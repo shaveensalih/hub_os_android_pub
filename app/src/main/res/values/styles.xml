@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="keyboard_row">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:divider">@drawable/empty_divider</item>
+        <item name="android:showDividers">middle</item>
+    </style>
+
+    <style name="keyboard_text">
+        <item name="fontFamily">@font/poppins</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:elegantTextHeight">true</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="maxLine">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/hub_accent_color_text</item>
+    </style>
+
+    <style name="keyboard_card">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">41dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="backgroundColor">@color/white</item>
+        <item name="cardCornerRadius">5dp</item>
+    </style>
+
+    <style name="CustomShapeAppearance">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">32dp</item>
+
+        <!-- Or if wants different radii depending on the corner. -->
+        <item name="neumorph_cornerSizeTopLeft">5dp</item>
+        <item name="neumorph_cornerSizeTopRight">5dp</item>
+        <item name="neumorph_cornerSizeBottomLeft">5dp</item>
+        <item name="neumorph_cornerSizeBottomRight">5dp</item>
+    </style>
+
+    <style name="Button.White" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@android:color/white</item>
+    </style>
+
+    <style name="standard_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:elegantTextHeight">true</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="font">@font/poppins</item>
+        <item name="fontFamily">@font/poppins</item>
+        <item name="maxLine">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="standard_text_multiple_lines" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:elegantTextHeight">true</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="font">@font/poppins</item>
+        <item name="fontFamily">@font/poppins</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="standard_text_no_alignment_multiple_lines" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:elegantTextHeight">true</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="font">@font/poppins</item>
+        <item name="fontFamily">@font/poppins</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="title_text" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:elegantTextHeight">true</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="font">@font/urbanist</item>
+        <item name="fontFamily">@font/urbanist</item>
+        <item name="fontWeight">700</item>
+        <item name="maxLine">1</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="spin_bottle_ts">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:layout_marginVertical">30dp</item>
+        <item name="android:layout_marginHorizontal">46dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">55sp</item>
+        <item name="android:elegantTextHeight">true</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="font">@font/poppins</item>
+        <item name="maxLine">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="app_icon_text_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:elegantTextHeight">true</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="font">@font/poppins</item>
+        <item name="fontFamily">@font/poppins</item>
+        <item name="maxLine">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/hub_accent_color_text</item>
+        <item name="layout_constraintLeft_toLeftOf">parent</item>
+        <item name="layout_constraintRight_toRightOf">parent</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:shadowColor">#40000000</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">6</item>
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="checkbox_style">
+        <item name="colorAccent">@color/white</item>
+        // for checked
+        <item name="android:textColorSecondary">@color/hub_accent_color_main</item>
+    </style>
+
+    <style name="button_style">
+        <item name="backgroundTint">@drawable/button_selector</item>
+        <item name="android:textColor">@drawable/button_text_selector</item>
+    </style>
+
+</resources>

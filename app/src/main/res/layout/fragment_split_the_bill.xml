@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/hub_apps_background_color"
+    android:orientation="vertical"
+    tools:context=".ui.mainActivity.fragments.MenuFragment">
+
+    <LinearLayout
+        android:id="@+id/error_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:contentDescription="@string/error_image"
+            android:src="@drawable/panda"
+            app:tint="@color/hub_accent_color_main" />
+
+        <TextView
+            android:id="@+id/error_tv"
+            style="@style/standard_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/nunito_bold"
+            android:maxLines="3"
+            android:singleLine="false"
+            android:text="@string/emptyString"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/action_button"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/hub_accent_color_main"
+            android:paddingHorizontal="20dp"
+            android:text="@string/retry"
+            android:textColor="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_error_view" />
+
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/prg_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/hub_accent_color_main"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/app_name"
+        style="@style/title_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="@drawable/hub_app_background_gradient"
+        android:paddingVertical="20dp"
+        android:text="@string/split_the_bill"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/split_the_bill_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingHorizontal="15dp"
+        app:layout_constraintBottom_toTopOf="@id/total_box"
+        app:layout_constraintTop_toBottomOf="@id/app_name"
+        tools:itemCount="5"
+        tools:listitem="@layout/split_the_bill_recyclerview_item" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/total_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:background="#161616"
+        android:padding="10dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/selected_tv"
+            style="@style/standard_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/selected"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/service_tv"
+            style="@style/standard_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/service"
+            android:textColor="#F29038"
+            android:textSize="15sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/selected_tv" />
+
+        <TextView
+            android:id="@+id/vat_tv"
+            style="@style/standard_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vat"
+            android:textColor="#F29038"
+            android:textSize="15sp"
+            android:visibility="invisible"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/service_tv" />
+
+        <TextView
+            android:id="@+id/applied_later_tv"
+            style="@style/standard_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/post_check_note"
+            android:textColor="#FFBF00"
+            android:textSize="11sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/discount_tv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/vat_tv" />
+
+        <TextView
+            android:id="@+id/discount_tv"
+            style="@style/standard_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/discount"
+            android:textColor="#FFBF00"
+            android:textSize="15sp"
+            android:visibility="invisible"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vat_tv" />
+
+        <TextView
+            android:id="@+id/total_tv"
+            style="@style/standard_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/total"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/discount_tv" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/split_evenly_button"
+            android:layout_width="110dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/hub_accent_color_main"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/split"
+            android:textColor="@color/white"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.hub_os_device.ui.components.InterceptingConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        app:cardCornerRadius="23dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="370dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/main_gradient"
+            android:paddingHorizontal="50dp"
+            android:paddingBottom="30dp">
+
+            <TextView
+                android:id="@+id/split_bill_between_tv"
+                style="@style/standard_text"
+                android:text="@string/split_the_bill_evenly_between_tv"
+                android:textColor="#555555"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toTopOf="@id/split_bill_between_np"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/split_bill_rg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/split_bill_between_tv">
+
+                <RadioButton
+                    android:id="@+id/selected_item_option"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/hub_accent_color_main"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/selected_items" />
+
+                <RadioButton
+                    android:id="@+id/all_items_option"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/hub_accent_color_main"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/all_items" />
+
+            </RadioGroup>
+
+            <com.example.hub_os_device.ui.components.NumberPicker
+                android:id="@+id/split_bill_between_np"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toTopOf="@id/split_bill_between_result_tv"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/split_bill_rg" />
+
+            <TextView
+                android:id="@+id/split_bill_between_result_tv"
+                style="@style/standard_text_multiple_lines"
+                android:text="@string/emptyString"
+                android:textColor="@color/black_faded"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/split_bill_between_np" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</com.example.hub_os_device.ui.components.InterceptingConstraintLayout>

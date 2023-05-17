@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/passcode_input_ll"
+    android:layout_width="wrap_content"
+    android:layout_height="29dp"
+    android:layout_gravity="center"
+    android:layout_margin="10dp"
+    android:divider="@drawable/empty_divider"
+    android:orientation="horizontal"
+    android:showDividers="middle">
+
+        <include layout="@layout/passcode_input_box" />
+
+        <include layout="@layout/passcode_input_box" />
+
+        <include layout="@layout/passcode_input_box" />
+
+        <include layout="@layout/passcode_input_box" />
+
+        <include layout="@layout/passcode_input_box" />
+
+        <include layout="@layout/passcode_input_box" />
+
+</LinearLayout>

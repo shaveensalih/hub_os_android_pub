@@ -1,0 +1,175 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:id="@+id/keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/empty_divider"
+        android:dividerPadding="5dp"
+        android:orientation="vertical"
+        android:showDividers="middle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow style="@style/keyboard_row">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/t9_key_1"
+                style="@style/keyboard_card"
+                android:tag="1"
+                app:cardBackgroundColor="@color/white">
+
+                <TextView
+                    style="@style/keyboard_text"
+                    android:text="@string/_1" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/t9_key_2"
+                style="@style/keyboard_card"
+                android:tag="2"
+                app:cardBackgroundColor="@color/white">
+
+                <TextView
+                    style="@style/keyboard_text"
+                    android:text="@string/_2" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/t9_key_3"
+                style="@style/keyboard_card"
+                android:tag="3"
+                app:cardBackgroundColor="@color/white">
+
+                <TextView
+                    style="@style/keyboard_text"
+                    android:text="@string/_3" />
+            </androidx.cardview.widget.CardView>
+        </TableRow>
+
+        <TableRow style="@style/keyboard_row">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/t9_key_4"
+                style="@style/keyboard_card"
+                android:tag="4"
+                app:cardBackgroundColor="@color/white">
+
+                <TextView
+                    style="@style/keyboard_text"
+                    android:text="@string/_4" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/t9_key_5"
+                style="@style/keyboard_card"
+                android:tag="5"
+                app:cardBackgroundColor="@color/white">
+
+                <TextView
+                    style="@style/keyboard_text"
+                    android:text="@string/_5" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/t9_key_6"
+                style="@style/keyboard_card"
+                android:tag="6"
+                app:cardBackgroundColor="@color/white">
+
+                <TextView
+                    style="@style/keyboard_text"
+                    android:text="@string/_6" />
+            </androidx.cardview.widget.CardView>
+        </TableRow>
+
+        <TableRow style="@style/keyboard_row">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/t9_key_7"
+                style="@style/keyboard_card"
+                android:tag="7"
+                app:cardBackgroundColor="@color/white">
+
+                <TextView
+                    style="@style/keyboard_text"
+                    android:text="@string/_7" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/t9_key_8"
+                style="@style/keyboard_card"
+                android:tag="8"
+                app:cardBackgroundColor="@color/white">
+
+                <TextView
+                    style="@style/keyboard_text"
+                    android:text="@string/_8" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/t9_key_9"
+                style="@style/keyboard_card"
+                android:tag="9"
+                app:cardBackgroundColor="@color/white">
+
+                <TextView
+                    style="@style/keyboard_text"
+                    android:text="@string/_9" />
+
+            </androidx.cardview.widget.CardView>
+        </TableRow>
+
+        <TableRow style="@style/keyboard_row">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/t9_key_backspace"
+                style="@style/keyboard_card"
+                app:cardBackgroundColor="@color/white">
+
+                <ImageView
+                    style="@style/keyboard_text"
+                    android:contentDescription="@string/backspace_icon"
+                    android:src="@drawable/ic_baseline_backspace_24"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/t9_key_0"
+                style="@style/keyboard_card"
+                android:tag="0"
+                app:cardBackgroundColor="@color/white">
+
+                <TextView
+                    style="@style/keyboard_text"
+                    android:text="@string/_0" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/t9_key_action"
+                style="@style/keyboard_card"
+                app:cardBackgroundColor="@color/white">
+
+                <TextView
+                    android:id="@+id/t9_key_action_tv"
+                    style="@style/keyboard_text"
+                    android:text="@string/clear"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            </androidx.cardview.widget.CardView>
+        </TableRow>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

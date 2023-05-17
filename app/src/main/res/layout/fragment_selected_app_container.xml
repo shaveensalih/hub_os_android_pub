@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/appCard"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:transitionGroup="true"
+    app:cardCornerRadius="15dp"
+    tools:context=".ui.mainActivity.fragments.SelectedAppContainerFragment">
+
+    <com.example.hub_os_device.ui.components.InterceptingConstraintLayout
+        android:id="@+id/constraint_layout_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/app_content_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+            android:id="@+id/return_to_apps_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="12dp"
+            android:background="@drawable/ic_apps"
+            android:contentDescription="@string/return_to_apps_button"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.example.hub_os_device.ui.components.InterceptingConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

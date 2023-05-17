@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/horoscope_bg_gradient"
+    tools:context=".ui.mainActivity.fragments.games.DailyHoroscopeCategoriesFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/stars_background"
+        android:scaleType="fitXY"
+        android:src="@drawable/stars" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="40dp">
+
+        <ProgressBar
+            android:id="@+id/prg_bar"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:indeterminateTint="@color/white"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/horoscope_question_title"
+            style="@style/title_text"
+            android:text="@string/horoscope_category_title"
+            app:layout_constraintBottom_toTopOf="@id/category_rg"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/instructions_tv"
+            style="@style/standard_text"
+            android:text="@string/horoscope_category_desc"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horoscope_question_title" />
+
+        <com.example.hub_os_device.ui.components.GridRadioGroup
+            android:id="@+id/category_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:stretchColumns="*"
+            app:activeTextColor="@color/black"
+            app:inactiveTextColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/next_button"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/instructions_tv"
+            app:layout_constraintVertical_bias="0.423">
+
+
+            <TableRow
+                android:id="@+id/ll1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="5dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/aries_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@drawable/horoscope_category_bg"
+                    android:button="@drawable/horoscope_category_bg"
+                    android:fontFamily="@font/poppins_bold"
+                    android:maxLines="1"
+                    android:paddingVertical="10dp"
+                    android:singleLine="true"
+                    android:tag="Aries"
+                    android:text="@string/aries"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <RadioButton
+                    android:id="@+id/taurus_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@drawable/horoscope_category_bg"
+                    android:button="@drawable/horoscope_category_bg"
+                    android:fontFamily="@font/poppins_bold"
+                    android:maxLines="1"
+                    android:paddingVertical="10dp"
+                    android:singleLine="true"
+                    android:tag="Taurus"
+                    android:text="@string/taurus"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/ll2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="5dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/gemini_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@drawable/horoscope_category_bg"
+                    android:button="@drawable/horoscope_category_bg"
+                    android:fontFamily="@font/poppins_bold"
+                    android:maxLines="1"
+                    android:paddingVertical="10dp"
+                    android:singleLine="true"
+                    android:tag="Gemini"
+                    android:text="@string/gemini"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <RadioButton
+                    android:id="@+id/cancer_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@drawable/horoscope_category_bg"
+                    android:button="@drawable/horoscope_category_bg"
+                    android:ellipsize="none"
+                    android:fontFamily="@font/poppins_bold"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:paddingHorizontal="5sp"
+                    android:paddingVertical="10dp"
+                    android:tag="Cancer"
+                    android:text="@string/cancer"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/ll3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="5dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/leo_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@drawable/horoscope_category_bg"
+                    android:button="@drawable/horoscope_category_bg"
+                    android:fontFamily="@font/poppins_bold"
+                    android:maxLines="1"
+                    android:paddingVertical="10dp"
+                    android:singleLine="true"
+                    android:tag="Leo"
+                    android:text="@string/leo"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <RadioButton
+                    android:id="@+id/virgo_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@drawable/horoscope_category_bg"
+                    android:button="@drawable/horoscope_category_bg"
+                    android:fontFamily="@font/poppins_bold"
+                    android:maxLines="1"
+                    android:paddingVertical="10dp"
+                    android:singleLine="true"
+                    android:tag="Virgo"
+                    android:text="@string/virgo"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/ll4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="5dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/libra_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@drawable/horoscope_category_bg"
+                    android:button="@drawable/horoscope_category_bg"
+                    android:fontFamily="@font/poppins_bold"
+                    android:maxLines="1"
+                    android:paddingVertical="10dp"
+                    android:singleLine="true"
+                    android:tag="Libra"
+                    android:text="@string/libra"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <RadioButton
+                    android:id="@+id/scorpio_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@drawable/horoscope_category_bg"
+                    android:button="@drawable/horoscope_category_bg"
+                    android:fontFamily="@font/poppins_bold"
+                    android:maxLines="1"
+                    android:paddingVertical="10dp"
+                    android:singleLine="true"
+                    android:tag="Scorpio"
+                    android:text="@string/scorpio"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/ll5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="5dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/sagittarius_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@drawable/horoscope_category_bg"
+                    android:button="@drawable/horoscope_category_bg"
+                    android:fontFamily="@font/poppins_bold"
+                    android:maxLines="1"
+                    android:paddingVertical="10dp"
+                    android:singleLine="true"
+                    android:tag="Sagittarius"
+                    android:text="@string/sagittarius"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <RadioButton
+                    android:id="@+id/capricorn_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@drawable/horoscope_category_bg"
+                    android:button="@drawable/horoscope_category_bg"
+                    android:fontFamily="@font/poppins_bold"
+                    android:maxLines="1"
+                    android:paddingVertical="10dp"
+                    android:singleLine="true"
+                    android:tag="Capricorn"
+                    android:text="@string/capricorn"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/ll6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="5dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/aquarius_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@drawable/horoscope_category_bg"
+                    android:button="@drawable/horoscope_category_bg"
+                    android:fontFamily="@font/poppins_bold"
+                    android:maxLines="1"
+                    android:paddingVertical="10dp"
+                    android:singleLine="true"
+                    android:tag="Aquarius"
+                    android:text="@string/aquarius"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <RadioButton
+                    android:id="@+id/pisces_button"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@drawable/horoscope_category_bg"
+                    android:button="@drawable/horoscope_category_bg"
+                    android:fontFamily="@font/poppins_bold"
+                    android:maxLines="1"
+                    android:paddingVertical="10dp"
+                    android:singleLine="true"
+                    android:tag="Pisces"
+                    android:text="@string/pisces"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+            </TableRow>
+
+        </com.example.hub_os_device.ui.components.GridRadioGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/next_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/horoscope_yellow"
+            android:enabled="false"
+            android:fontFamily="@font/poppins_bold"
+            android:padding="18dp"
+            android:text="@string/get_my_horoscope"
+            android:textColor="@color/black"
+            app:cornerRadius="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

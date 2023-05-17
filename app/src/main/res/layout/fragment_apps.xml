@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/apps_grid_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="5"
+    android:rowCount="7"
+    android:useDefaultMargins="true"
+    tools:context=".ui.mainActivity.fragments.AppsFragment">
+
+    <ViewStub
+        android:id="@+id/clock_stub"
+        android:layout_row="1"
+        android:layout_rowSpan="1"
+        android:layout_columnSpan="1"
+        android:layout_columnWeight="1"
+        android:layout_gravity="center_vertical"
+        android:layout="@layout/clock_widget_content" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/broadcast_message_fragment"
+        android:name="com.example.hub_os_device.ui.mainActivity.fragments.BroadcastMessageFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowSpan="1"
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="4"
+        android:layout_columnWeight="4" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/hub_app_icon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowSpan="2"
+        android:layout_rowWeight="2"
+        android:layout_columnSpan="1"
+        android:layout_columnWeight="1"
+        android:tag="Hub Settings App"
+        android:transitionName="hub_app_transition"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="14dp"
+        app:rippleColor="@android:color/transparent"
+        >
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/blurView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ViewStub
+                android:id="@+id/table_num_stub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout="@layout/table_num_widget_content" />
+        </eightbitlab.com.blurview.BlurView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/games_icon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowSpan="2"
+        android:layout_rowWeight="2"
+        android:layout_columnSpan="1"
+        android:layout_columnWeight="1"
+        android:tag="Games App"
+        android:transitionName="games_app_transition"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="14dp"
+        app:rippleColor="@android:color/transparent"
+        >
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/blurView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ViewStub
+                android:id="@+id/games_stub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout="@layout/games_widget_content" />
+        </eightbitlab.com.blurview.BlurView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/topic_of_day_app_icon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowSpan="2"
+        android:layout_rowWeight="2"
+        android:layout_columnSpan="1"
+        android:layout_columnWeight="1"
+        android:tag="Topics App"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="14dp"
+        app:rippleColor="@android:color/transparent"
+        >
+
+        <ViewStub
+            android:id="@+id/topics_stub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/topics_widget_content" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/largeWeatherContainer"
+        android:name="com.example.hub_os_device.ui.mainActivity.fragments.WeatherWidgetFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowSpan="2"
+        android:layout_rowWeight="2"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="2" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/menu_app_icon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowSpan="2"
+        android:layout_rowWeight="2"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="2"
+        android:tag="Menu App"
+        android:transitionName="menu_app_transition"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="14dp"
+        app:rippleColor="@android:color/transparent"
+        >
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/blurView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ViewStub
+                android:id="@+id/menu_stub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout="@layout/menu_widget_content" />
+        </eightbitlab.com.blurview.BlurView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/survey_app_icon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowSpan="2"
+        android:layout_rowWeight="2"
+        android:layout_columnSpan="1"
+        android:layout_columnWeight="1"
+        android:tag="Survey App"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="14dp"
+        app:rippleColor="@android:color/transparent"
+        >
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/blurView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ViewStub
+                android:id="@+id/survey_stub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout="@layout/survey_widget_content" />
+
+        </eightbitlab.com.blurview.BlurView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowSpan="1"
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="2"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="14dp"
+        >
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/blurView5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:tag="no_dark_mode">
+
+            <ViewStub
+                android:id="@+id/display_stub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout="@layout/display_widget_content" />
+
+        </eightbitlab.com.blurview.BlurView>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/split_the_bill_app_icon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowSpan="1"
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="2"
+        android:tag="Split the Bill App"
+        android:transitionName="split_bill_app_transition"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="14dp"
+        app:rippleColor="@android:color/transparent"
+        >
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/blurView6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ViewStub
+                android:id="@+id/split_bill_stub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout="@layout/split_bill_widget_content" />
+        </eightbitlab.com.blurview.BlurView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/backspace_icon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowSpan="2"
+        android:layout_rowWeight="2"
+        android:layout_columnSpan="3"
+        android:layout_columnWeight="3"
+        android:tag="Backspace App"
+        android:transitionName="backspace_app_transition"
+        app:cardCornerRadius="14dp"
+        app:rippleColor="@android:color/transparent"
+        >
+
+        <eightbitlab.com.blurview.BlurView
+            android:id="@+id/blurView7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ViewStub
+                android:id="@+id/stub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout="@layout/backspace_widget_content" />
+        </eightbitlab.com.blurview.BlurView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/self_service_icon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_rowSpan="2"
+        android:layout_rowWeight="2"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="2"
+        android:tag="Self Service"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="14dp"
+        >
+
+        <ViewStub
+            android:id="@+id/self_service_stub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/self_service_widget_content" />
+
+    </com.google.android.material.card.MaterialCardView>
+</GridLayout>

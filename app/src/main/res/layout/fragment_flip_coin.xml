@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/flip_coin_background_gradient"
+    tools:context=".ui.mainActivity.fragments.games.FlipCoinFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:contentDescription="@string/background_decoration"
+        android:rotation="180"
+        android:scaleType="fitXY"
+        android:src="@drawable/circles_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/yellow" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:contentDescription="@string/background_decoration"
+        android:scaleType="fitXY"
+        android:src="@drawable/circles_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:tint="@color/yellow" />
+
+    <TextView
+        android:id="@+id/coin_result_tv"
+        style="@style/title_text"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal|top"
+        android:text="@string/tails"
+        android:textSize="65sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/flip_coin_iv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/flip_coin_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/coin_image"
+        android:src="@drawable/coin_heads"
+        app:layout_constraintBottom_toTopOf="@id/flip_coin_instructions"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/coin_result_tv" />
+
+    <TextView
+        android:id="@+id/flip_coin_instructions"
+        style="@style/standard_text"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal|top"
+        android:text="@string/tap_to_flip_the_coin"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/flip_coin_iv" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

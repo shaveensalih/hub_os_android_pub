@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/spin_bottle_app_bg_gradient"
+    tools:context=".ui.mainActivity.fragments.games.SpinBottleFragment">
+
+    <ImageView
+        android:id="@+id/bottle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_beer_bottle"
+        android:contentDescription="@string/beer_bottle_image"
+        android:layout_gravity="center"/>
+
+</FrameLayout>

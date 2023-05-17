@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 7.2.0" type="baseline" client="gradle" dependencies="false" name="AGP (7.2.0)" variant="fatal" version="7.2.0">
+
+    <issue
+        id="ResourceCycle"
+        message="Font `quicksand_medium_font` should not reference itself"
+        errorLine1="        android:font=&quot;@font/quicksand_medium_font&quot;/>"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/font/quicksand_medium_font.xml"
+            line="6"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="ResourceCycle"
+        message="Font `quicksand_medium_font` should not reference itself"
+        errorLine1="        android:font=&quot;@font/quicksand_medium_font&quot;/>"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/font/quicksand_medium_font.xml"
+            line="6"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="ResourceCycle"
+        message="Font `quicksand_regular_font` should not reference itself"
+        errorLine1="        android:font=&quot;@font/quicksand_regular_font&quot;/>"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/font/quicksand_regular_font.xml"
+            line="6"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="ResourceCycle"
+        message="Font `quicksand_regular_font` should not reference itself"
+        errorLine1="        android:font=&quot;@font/quicksand_regular_font&quot;/>"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/font/quicksand_regular_font.xml"
+            line="6"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="RemoveWorkManagerInitializer"
+        message="Remove androidx.work.WorkManagerInitializer from your AndroidManifest.xml when using on-demand initialization."
+        errorLine1="        &lt;provider"
+        errorLine2="        ^">
+        <location
+            file="src/main/AndroidManifest.xml"
+            line="48"
+            column="9"/>
+    </issue>
+
+</issues>

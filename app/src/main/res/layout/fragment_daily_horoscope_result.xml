@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/horoscope_bg_gradient"
+    tools:context=".ui.mainActivity.fragments.games.DailyHoroscopeResultFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/stars_background"
+        android:scaleType="fitXY"
+        android:src="@drawable/stars" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="40dp">
+
+        <ImageView
+            android:id="@+id/horoscope_iv"
+            android:layout_width="134dp"
+            android:layout_height="134dp"
+            android:contentDescription="@string/chosen_horoscope_iv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/horoscope_title_tv"
+            style="@style/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/emptyString"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horoscope_iv" />
+
+        <TextView
+            android:id="@+id/horoscope_dates_tv"
+            style="@style/standard_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/emptyString"
+            android:textColor="@color/yellow"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horoscope_title_tv" />
+
+        <GridLayout
+            android:id="@+id/horoscope_grid"
+            android:layout_width="match_parent"
+            android:layout_height="265dp"
+            android:columnCount="3"
+            android:rowCount="6"
+            android:useDefaultMargins="true"
+            app:layout_constraintBottom_toTopOf="@id/redo_horoscope_button"
+            app:layout_constraintTop_toBottomOf="@id/horoscope_dates_tv">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_rowSpan="3"
+                android:layout_rowWeight="3"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/horoscope_card_bg"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/mood_title_tv"
+                    style="@style/title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@string/mood"
+                    android:textColor="@color/yellow"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/mood_tv"
+                    style="@style/standard_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/emptyString"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_rowSpan="3"
+                android:layout_rowWeight="3"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/horoscope_card_bg"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/compatibility_title_tv"
+                    style="@style/title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@string/compatibility"
+                    android:textColor="@color/yellow"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/compatibility_tv"
+                    style="@style/standard_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/emptyString"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_rowSpan="1"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/horoscope_card_bg"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/color_title_tv"
+                    style="@style/title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lucky_color"
+                    android:textColor="@color/yellow"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/color_tv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/color_tv"
+                    style="@style/standard_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/emptyString"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/color_title_tv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_rowSpan="1"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/horoscope_card_bg"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/number_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/title_text"
+                    android:text="@string/lucky_number"
+                    android:textColor="@color/yellow"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/number_tv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/number_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito"
+                    android:text="@string/emptyString"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/number_title_tv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_rowSpan="1"
+                android:layout_rowWeight="1"
+                android:layout_columnSpan="1"
+                android:layout_columnWeight="1"
+                android:background="@drawable/horoscope_card_bg"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/time_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/lucky_time"
+                    android:textAlignment="center"
+                    android:textColor="@color/yellow"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/time_tv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito"
+                    android:text="@string/emptyString"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/time_title_tv"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_rowSpan="3"
+                android:layout_rowWeight="3"
+                android:layout_columnSpan="3"
+                android:layout_columnWeight="3"
+                android:background="@drawable/horoscope_card_bg"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/tip_title_tv"
+                    style="@style/title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tip_of_the_day"
+                    android:textColor="@color/yellow"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tip_tv"
+                    style="@style/standard_text_no_alignment_multiple_lines"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/emptyString"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tip_title_tv" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/current_date_tv"
+            style="@style/standard_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/emptyString"
+            android:textColor="@color/yellow"
+            android:textSize="14sp"
+            app:layout_constraintRight_toRightOf="@id/horoscope_grid"
+            app:layout_constraintTop_toBottomOf="@id/horoscope_grid" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/redo_horoscope_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/horoscope_yellow"
+            android:padding="18dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/get_another_horoscope"
+            android:textColor="@color/black"
+            app:cornerRadius="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

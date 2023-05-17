@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/trivia_background"
+    android:padding="15dp"
+    tools:context=".ui.mainActivity.fragments.games.TriviaFragment">
+
+    <TextView
+        android:id="@+id/trivia_question_title"
+        style="@style/title_text"
+        android:text="@string/category"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/category_instructions_tv"
+        style="@style/standard_text_multiple_lines"
+        android:text="@string/trivia_instructions"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/trivia_question_title" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/trivia_container_view"
+        android:name="com.example.hub_os_device.ui.mainActivity.fragments.games.TriviaCategoriesFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/category_instructions_tv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

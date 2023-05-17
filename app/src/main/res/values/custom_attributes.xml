@@ -1,0 +1,12 @@
+<resources>
+    <declare-styleable name="custom_attributes">
+<!--        <attr name="exampleString" format="string" />-->
+<!--        <attr name="exampleDimension" format="dimension" />-->
+        <attr name="exampleColor" format="color" />
+        <attr name="drawable" format="reference" />
+        <attr name="activeTextColor" format="color" />
+        <attr name="inactiveTextColor" format="color" />
+<!--        <attr name="exampleDrawable" format="color|reference" />-->
+<!--        <attr name="exampleColor" format="color" />-->
+    </declare-styleable>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/standard_text"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="5dp"
+    android:autoSizeMaxTextSize="18sp"
+    android:autoSizeTextType="uniform"
+    android:background="@drawable/popup_menu_item_bg"
+    android:ellipsize="marquee"
+    android:marqueeRepeatLimit="marquee_forever"
+    android:padding="10dp"
+    android:text="@string/emptyString" />
+

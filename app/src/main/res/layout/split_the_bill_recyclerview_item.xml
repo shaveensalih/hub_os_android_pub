@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="10dp"
+    android:animateLayoutChanges="true">
+
+    <TextView
+        android:id="@+id/item_name_tv"
+        style="@style/standard_text_multiple_lines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="300dp"
+        android:maxLines="2"
+        android:text="@string/emptyString"
+        android:textAlignment="textStart"
+        android:textColor="@color/black_white_text_color"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/item_discount_tv"
+        style="@style/standard_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:text="@string/emptyString"
+        android:textColor="#F29038"
+        android:textSize="11sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/item_name_tv"
+        app:layout_constraintLeft_toRightOf="@id/item_name_tv"
+        app:layout_constraintTop_toTopOf="@id/item_name_tv" />
+
+    <TextView
+        android:id="@+id/item_extras_tv"
+        style="@style/standard_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_light"
+        android:text="@string/emptyString"
+        android:textColor="@color/black_white_text_color"
+        android:textSize="11sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_name_tv" />
+
+    <TextView
+        android:id="@+id/item_notes_tv"
+        style="@style/standard_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/emptyString"
+        android:textColor="@color/black_white_text_color"
+        android:textSize="11sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_extras_tv" />
+
+    <ViewSwitcher
+        android:id="@+id/split_vs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/quantity_vs"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/split_button"
+            android:layout_width="77dp"
+            android:layout_height="29dp"
+            android:autoSizeMaxTextSize="30sp"
+            android:autoSizeTextType="uniform"
+            android:backgroundTint="@color/orange_color"
+            android:fontFamily="@font/poppins_bold"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="@string/split"
+            app:cornerRadius="5dp" />
+
+        <com.example.hub_os_device.ui.components.NumberPicker
+            android:id="@+id/split_np"
+            android:layout_width="77dp"
+            android:layout_height="29dp"
+            app:exampleColor="#F29038" />
+
+
+    </ViewSwitcher>
+
+    <ViewSwitcher
+        android:id="@+id/quantity_vs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/quantity_add_button"
+            android:layout_width="33dp"
+            android:layout_height="29dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="5dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:contentDescription="@string/add_button_desc"
+                android:src="@drawable/ic_round_add_24" />
+
+        </androidx.cardview.widget.CardView>
+
+        <com.example.hub_os_device.ui.components.NumberPicker
+            android:id="@+id/quantity_np"
+            android:layout_width="77dp"
+            android:layout_height="29dp" />
+
+    </ViewSwitcher>
+
+    <TextView
+        android:id="@+id/gifted_tv"
+        style="@style/standard_text"
+        android:text="@string/gifted"
+        android:textColor="#F29038"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="#334CD3C0" android:state_enabled="false"/>
+    <item android:color="@color/hub_accent_color_main" android:state_enabled="true"/>
+    <item android:color="@color/hub_accent_color_main"/>
+</selector>

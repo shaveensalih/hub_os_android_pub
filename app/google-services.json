@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "266255839623",
+    "project_id": "hubos-android",
+    "storage_bucket": "hubos-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266255839623:android:601c309a794d2d53402322",
+        "android_client_info": {
+          "package_name": "com.example.hub_os_device"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "266255839623-n9c0ufntdcr7n9bhdkrovqk2q6gp47e3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hub_os_device",
+            "certificate_hash": "11149aed2efb4109e157a4dabdcff91908aaa141"
+          }
+        },
+        {
+          "client_id": "266255839623-5i6l011jfsvkn93r5bthem0o86tosch6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzzJbaQ3wTwkTQ1O5a4PaASDYZlJsw3Cg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "266255839623-5i6l011jfsvkn93r5bthem0o86tosch6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

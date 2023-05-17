@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hub_settings_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="30dp"
+    android:transitionGroup="true"
+    tools:context=".ui.mainActivity.fragments.HubAppLockScreenFragment">
+
+    <TextView
+        style="@style/title_text"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/welcome_admin_panel"
+        />
+
+    <TextView
+        android:id="@+id/establishment_display_tv"
+        style="@style/standard_text"
+        android:layout_weight="0.1"
+        android:text="@string/establishment_display"
+        android:textSize="15sp" />
+
+
+    <TextView
+        android:id="@+id/device_id_tv"
+        style="@style/standard_text"
+        android:layout_weight="0.1"
+        android:text="@string/device_id_display"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/app_version_tv"
+        style="@style/standard_text"
+        android:layout_weight="0.1"
+        android:text="@string/emptyString"
+        android:textSize="15sp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="232dp"
+        android:layout_height="46dp"
+        android:layout_marginVertical="7dp"
+        app:cardBackgroundColor="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <soup.neumorphism.NeumorphTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/standard_text"
+                android:layout_marginEnd="10dp"
+                android:text="@string/table_colon"
+                android:textColor="@color/hub_accent_color_text"
+                android:textSize="30sp"
+                app:neumorph_inset="0dp"
+                app:neumorph_lightSource="leftTop"
+                app:neumorph_shadowColorDark="#20000000"
+                app:neumorph_shadowColorLight="#40ffffff"
+                app:neumorph_shadowElevation="5dp"
+                app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+                app:neumorph_shapeType="pressed">
+
+            </soup.neumorphism.NeumorphTextView>
+
+            <soup.neumorphism.NeumorphCardView
+                style="@style/Widget.Neumorph.CardView"
+                android:layout_width="68dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginVertical="1dp"
+                app:neumorph_backgroundColor="@color/hub_accent_color_main"
+                app:neumorph_inset="0dp"
+                app:neumorph_lightSource="leftTop"
+                app:neumorph_shadowColorDark="#20000000"
+                app:neumorph_shadowColorLight="#40ffffff"
+                app:neumorph_shadowElevation="5dp"
+                app:neumorph_shapeAppearance="@style/CustomShapeAppearance"
+                app:neumorph_shapeType="pressed">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/table_num_tv"
+                        style="@style/standard_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="0dp"
+                        android:text="@string/emptyString"
+                        android:textSize="20sp">
+                    </TextView>
+
+                </RelativeLayout>
+
+            </soup.neumorphism.NeumorphCardView>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.example.hub_os_device.ui.components.NumberPadView
+        android:id="@+id/number_pad"
+        android:layout_width="232dp"
+        android:layout_height="wrap_content">
+
+    </com.example.hub_os_device.ui.components.NumberPadView>
+
+    <androidx.legacy.widget.Space
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:minHeight="5dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/reload_button"
+            android:layout_width="153dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/settings_button"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/reload_button_tv"
+                    style="@style/standard_text"
+                    android:paddingVertical="10dp"
+                    android:text="@string/reload"
+                    android:textColor="@color/hub_accent_color_main"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/reload_button_progress_bar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:indeterminate="true"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/settings_button"
+            android:layout_width="153dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/settings_button"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/standard_text"
+                android:paddingVertical="10dp"
+                android:textColor="@color/hub_accent_color_main"
+                android:text="@string/settings" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/debug_button"
+        android:layout_width="153dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:cardBackgroundColor="@color/white">
+
+        <TextView
+            android:id="@+id/debug_button_tv"
+            style="@style/standard_text"
+            android:paddingVertical="10dp"
+            android:textColor="@color/hub_accent_color_main"
+            android:text="@string/debug_off" />
+
+    </androidx.cardview.widget.CardView>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="40dp" />
+
+    <TextView
+        style="@style/standard_text"
+        android:text="@string/contact_backspace_line"
+        android:textSize="15sp" />
+
+</LinearLayout>

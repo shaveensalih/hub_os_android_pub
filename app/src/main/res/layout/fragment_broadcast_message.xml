@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.mainActivity.fragments.BroadcastMessageFragment">
+
+    <TextView
+        android:id="@+id/marquee_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/standard_text_no_alignment_multiple_lines"
+        android:ellipsize="marquee"
+        android:gravity="center_vertical"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:text="@string/emptyString"
+        />
+
+</FrameLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/hub_app_background_gradient"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="30dp"
+    tools:context=".ui.mainActivity.fragments.HubAppLockScreenFragment">
+
+    <TextView
+        style="@style/title_text"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="@string/welcome_to_hubOS"
+        />
+
+    <TextView
+        style="@style/standard_text_multiple_lines"
+        android:layout_weight="0.1"
+        android:text="@string/hub_lock_screen_instructions"
+        android:textSize="23sp" />
+
+
+    <TextView
+        android:id="@+id/establishment_display_tv"
+        android:layout_weight="0.1"
+        style="@style/standard_text"
+        android:text="@string/establishment_display"
+        android:textSize="15sp" />
+
+    <com.example.hub_os_device.ui.components.PasscodeInputDisplay
+        android:id="@+id/passcode_input_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.example.hub_os_device.ui.components.NumberPadView
+        android:id="@+id/number_pad"
+        android:layout_width="232dp"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </com.example.hub_os_device.ui.components.NumberPadView>
+
+    <TextView
+        style="@style/standard_text_multiple_lines"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:text="@string/contact_backspace_line"
+        android:textSize="15sp" />
+
+</LinearLayout>

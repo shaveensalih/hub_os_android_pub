@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="eight_ball_options">
+        <item>@drawable/eight_ball_answer_1</item>
+        <item>@drawable/eight_ball_answer_2</item>
+        <item>@drawable/eight_ball_answer_3</item>
+        <item>@drawable/eight_ball_answer_4</item>
+        <item>@drawable/eight_ball_answer_5</item>
+        <item>@drawable/eight_ball_answer_6</item>
+        <item>@drawable/eight_ball_answer_7</item>
+        <item>@drawable/eight_ball_answer_8</item>
+        <item>@drawable/eight_ball_answer_9</item>
+        <item>@drawable/eight_ball_answer_10</item>
+        <item>@drawable/eight_ball_answer_11</item>
+        <item>@drawable/eight_ball_answer_12</item>
+        <item>@drawable/eight_ball_answer_13</item>
+    </array>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.fragment.app.FragmentContainerView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/largeWeatherContainer"
+    android:name="com.example.hub_os_device.ui.mainActivity.fragments.WeatherWidgetFragment"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    tools:showIn="@layout/fragment_apps" />

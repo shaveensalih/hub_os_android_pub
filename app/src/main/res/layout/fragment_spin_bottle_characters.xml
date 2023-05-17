@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/spin_bottle_app_bg_gradient"
+    android:paddingHorizontal="52dp"
+    tools:context=".ui.mainActivity.fragments.games.SpinBottleCharactersFragment">
+
+    <TextView
+        android:id="@+id/spin_bottle_character_instructions_tv"
+        style="@style/standard_text_multiple_lines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/character_choosing_instructions"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/picker_player_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#26AAAAAA"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintBottom_toTopOf="@id/character_grid"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/players_card"
+        app:layout_constraintTop_toBottomOf="@id/spin_bottle_character_instructions_tv"
+        app:strokeColor="#80FFFFFF"
+        app:strokeWidth="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="22dp">
+
+            <TextView
+                android:id="@+id/picker_player_tv"
+                style="@style/standard_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/player_1"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/picker_player_iv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/picker_player_iv"
+                android:layout_width="181dp"
+                android:layout_height="181dp"
+                android:background="@drawable/spin_bottle_player_circle"
+                android:backgroundTint="@color/spin_bottle_blue"
+                android:contentDescription="@string/picked_player_iv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/picker_player_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/players_card"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="#26AAAAAA"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="@id/picker_player_card"
+        app:layout_constraintLeft_toRightOf="@id/picker_player_card"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/picker_player_card"
+        app:strokeColor="#80FFFFFF"
+        app:strokeWidth="2dp">
+
+        <GridLayout
+            android:id="@+id/players_card_grid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:columnCount="2"
+            android:padding="10dp"
+            android:rowCount="8"
+            android:useDefaultMargins="true">
+
+
+            <ImageView
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:background="@drawable/spin_bottle_player_circle"
+                android:backgroundTint="@color/spin_bottle_blue"
+                android:contentDescription="@string/player_1_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/picker_player_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:background="@drawable/spin_bottle_player_circle"
+                android:backgroundTint="@color/spin_bottle_orange"
+                android:contentDescription="@string/player_2_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/picker_player_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:background="@drawable/spin_bottle_player_circle"
+                android:backgroundTint="@color/spin_bottle_purple"
+                android:contentDescription="@string/player_3_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/picker_player_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:background="@drawable/spin_bottle_player_circle"
+                android:backgroundTint="@color/spin_bottle_pink"
+                android:contentDescription="@string/player_4_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/picker_player_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:background="@drawable/spin_bottle_player_circle"
+                android:backgroundTint="@color/spin_bottle_green"
+                android:contentDescription="@string/player_5_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/picker_player_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:background="@drawable/spin_bottle_player_circle"
+                android:backgroundTint="@color/spin_bottle_yellow"
+                android:contentDescription="@string/player_6_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/picker_player_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:background="@drawable/spin_bottle_player_circle"
+                android:backgroundTint="@color/spin_bottle_red"
+                android:contentDescription="@string/player_7_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/picker_player_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:background="@drawable/spin_bottle_player_circle"
+                android:backgroundTint="@color/spin_bottle_dark_blue"
+                android:contentDescription="@string/player_8_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/picker_player_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </GridLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <GridLayout
+        android:id="@+id/character_grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="6"
+        android:rowCount="3"
+        android:useDefaultMargins="true"
+        app:layout_constraintBottom_toBottomOf="@id/next_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/picker_player_card">
+
+        <com.example.hub_os_device.ui.components.CharacterCard
+            android:tag="av1"
+            app:drawable="@drawable/av1" />
+
+        <com.example.hub_os_device.ui.components.CharacterCard
+            android:tag="av2"
+            app:drawable="@drawable/av2" />
+
+        <com.example.hub_os_device.ui.components.CharacterCard
+            android:tag="av3"
+            app:drawable="@drawable/av3" />
+
+        <com.example.hub_os_device.ui.components.CharacterCard
+            android:tag="av4"
+            app:drawable="@drawable/av4" />
+
+        <com.example.hub_os_device.ui.components.CharacterCard
+            android:tag="av5"
+            app:drawable="@drawable/av5" />
+
+        <com.example.hub_os_device.ui.components.CharacterCard
+            android:tag="av6"
+            app:drawable="@drawable/av6" />
+
+        <com.example.hub_os_device.ui.components.CharacterCard
+            android:tag="av7"
+            app:drawable="@drawable/av7" />
+
+        <com.example.hub_os_device.ui.components.CharacterCard
+            android:tag="av8"
+            app:drawable="@drawable/av8" />
+
+        <com.example.hub_os_device.ui.components.CharacterCard
+            android:tag="av9"
+            app:drawable="@drawable/av9" />
+
+        <com.example.hub_os_device.ui.components.CharacterCard
+            android:tag="av10"
+            app:drawable="@drawable/av10" />
+
+        <com.example.hub_os_device.ui.components.CharacterCard
+            android:tag="av11"
+            app:drawable="@drawable/av11" />
+
+        <com.example.hub_os_device.ui.components.CharacterCard
+            android:tag="av12"
+            app:drawable="@drawable/av12" />
+
+        <com.example.hub_os_device.ui.components.CharacterCard
+            android:tag="av13"
+            app:drawable="@drawable/av13" />
+
+        <com.example.hub_os_device.ui.components.CharacterCard
+            android:tag="av14"
+            app:drawable="@drawable/av14" />
+
+        <com.example.hub_os_device.ui.components.CharacterCard
+            android:tag="av15"
+            app:drawable="@drawable/av15" />
+
+        <com.example.hub_os_device.ui.components.CharacterCard
+            android:tag="av16"
+            app:drawable="@drawable/av16" />
+
+        <com.example.hub_os_device.ui.components.CharacterCard
+            android:tag="av17"
+            app:drawable="@drawable/av17" />
+
+        <com.example.hub_os_device.ui.components.CharacterCard
+            android:tag="av18"
+            app:drawable="@drawable/av18" />
+
+    </GridLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/orange_color"
+        android:clickable="false"
+        app:cornerRadius="10dp"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="5dp"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

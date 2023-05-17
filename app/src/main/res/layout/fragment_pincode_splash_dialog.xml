@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_dialog_bg"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:weightSum="2"
+    tools:context=".PinCodeSplashDialog">
+
+    <TextView
+        android:id="@+id/pin_passcode_instructions"
+        style="@style/standard_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="30dp"
+        android:textSize="18sp"
+        android:layout_weight="1"
+        android:text="@string/emptyString"
+        android:textColor="@color/black" />
+
+    <com.example.hub_os_device.ui.components.PasscodeInputDisplay
+        android:id="@+id/pin_passcode_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+    <com.example.hub_os_device.ui.components.NumberPadView
+        android:id="@+id/pin_number_pad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_weight="1" />
+
+
+</LinearLayout>

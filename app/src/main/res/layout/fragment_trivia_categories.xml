@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    tools:context=".ui.mainActivity.fragments.games.TriviaCategoriesFragment">
+
+    <ProgressBar
+        android:id="@+id/questions_prg_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:progressTint="@color/hub_accent_color_main"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <TextView
+        android:id="@+id/loading_tv"
+        style="@style/standard_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:singleLine="false"
+        android:text="@string/emptyString"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questions_prg_bar" />
+
+    <com.example.hub_os_device.ui.components.GridRadioGroup
+        android:id="@+id/category_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:stretchColumns="*"
+        app:activeTextColor="@color/white"
+        app:inactiveTextColor="@color/hub_accent_color_main"
+        app:layout_constraintBottom_toBottomOf="@id/next_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.423">
+
+        <TableRow
+            android:id="@+id/ll1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/art_cat_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/trivia_answer_button"
+                android:button="@drawable/trivia_answer_button"
+                android:fontFamily="@font/poppins_bold"
+                android:maxLines="1"
+                android:paddingVertical="10dp"
+                android:singleLine="true"
+                android:tag="Art"
+                android:text="@string/art"
+                android:textAlignment="center"
+                android:textColor="@color/hub_accent_color_main" />
+
+            <RadioButton
+                android:id="@+id/comp_cat_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/trivia_answer_button"
+                android:button="@drawable/trivia_answer_button"
+                android:fontFamily="@font/poppins_bold"
+                android:maxLines="1"
+                android:paddingVertical="10dp"
+                android:singleLine="true"
+                android:tag="Computers"
+                android:text="@string/computers"
+                android:textAlignment="center"
+                android:textColor="@color/hub_accent_color_main" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ll2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/film_cat_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/trivia_answer_button"
+                android:button="@drawable/trivia_answer_button"
+                android:fontFamily="@font/poppins_bold"
+                android:maxLines="1"
+                android:paddingVertical="10dp"
+                android:singleLine="true"
+                android:tag="Film"
+                android:text="@string/film"
+                android:textAlignment="center"
+                android:textColor="@color/hub_accent_color_main" />
+
+            <RadioButton
+                android:id="@+id/gen_cat_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/trivia_answer_button"
+                android:button="@drawable/trivia_answer_button"
+                android:ellipsize="none"
+                android:fontFamily="@font/poppins_bold"
+                android:lines="1"
+                android:maxLines="1"
+                android:paddingHorizontal="5sp"
+                android:paddingVertical="10dp"
+                android:tag="GeneralKnowledge"
+                android:text="@string/general_knowledge"
+                android:textAlignment="center"
+                android:textColor="@color/hub_accent_color_main" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ll3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/geo_cat_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/trivia_answer_button"
+                android:button="@drawable/trivia_answer_button"
+                android:fontFamily="@font/poppins_bold"
+                android:maxLines="1"
+                android:paddingVertical="10dp"
+                android:singleLine="true"
+                android:tag="Geography"
+                android:text="@string/geography"
+                android:textAlignment="center"
+                android:textColor="@color/hub_accent_color_main" />
+
+            <RadioButton
+                android:id="@+id/history_cat_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/trivia_answer_button"
+                android:button="@drawable/trivia_answer_button"
+                android:fontFamily="@font/poppins_bold"
+                android:maxLines="1"
+                android:paddingVertical="10dp"
+                android:singleLine="true"
+                android:tag="History"
+                android:text="@string/history"
+                android:textAlignment="center"
+                android:textColor="@color/hub_accent_color_main" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ll4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <RadioButton
+                android:id="@+id/math_cat_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/trivia_answer_button"
+                android:button="@drawable/trivia_answer_button"
+                android:fontFamily="@font/poppins_bold"
+                android:maxLines="1"
+                android:paddingVertical="10dp"
+                android:singleLine="true"
+                android:tag="Mathematics"
+                android:text="@string/mathematics"
+                android:textAlignment="center"
+                android:textColor="@color/hub_accent_color_main" />
+
+            <RadioButton
+                android:id="@+id/music_cat_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/trivia_answer_button"
+                android:button="@drawable/trivia_answer_button"
+                android:fontFamily="@font/poppins_bold"
+                android:maxLines="1"
+                android:paddingVertical="10dp"
+                android:singleLine="true"
+                android:tag="Music"
+                android:text="@string/music"
+                android:textAlignment="center"
+                android:textColor="@color/hub_accent_color_main" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ll5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <RadioButton
+                android:id="@+id/sports_cat_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/trivia_answer_button"
+                android:button="@drawable/trivia_answer_button"
+                android:fontFamily="@font/poppins_bold"
+                android:maxLines="1"
+                android:paddingVertical="10dp"
+                android:singleLine="true"
+                android:tag="Sports"
+                android:text="@string/sports"
+                android:textAlignment="center"
+                android:textColor="@color/hub_accent_color_main" />
+
+            <RadioButton
+                android:id="@+id/vehicles_cat_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/trivia_answer_button"
+                android:button="@drawable/trivia_answer_button"
+                android:fontFamily="@font/poppins_bold"
+                android:maxLines="1"
+                android:paddingVertical="10dp"
+                android:singleLine="true"
+                android:tag="Vehicles"
+                android:text="@string/vehicles"
+                android:textAlignment="center"
+                android:textColor="@color/hub_accent_color_main" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ll6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/video_games_cat_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/trivia_answer_button"
+                android:button="@drawable/trivia_answer_button"
+                android:fontFamily="@font/poppins_bold"
+                android:maxLines="1"
+                android:paddingVertical="10dp"
+                android:singleLine="true"
+                android:tag="VideoGames"
+                android:text="@string/video_games"
+                android:textAlignment="center"
+                android:textColor="@color/hub_accent_color_main" />
+
+            <RadioButton
+                android:id="@+id/science_cat_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:autoSizeMaxTextSize="30sp"
+                android:autoSizeTextType="uniform"
+                android:background="@drawable/trivia_answer_button"
+                android:button="@drawable/trivia_answer_button"
+                android:fontFamily="@font/poppins_bold"
+                android:maxLines="1"
+                android:paddingVertical="10dp"
+                android:singleLine="true"
+                android:tag="ScienceNature"
+                android:text="@string/science_nature"
+                android:textAlignment="center"
+                android:textColor="@color/hub_accent_color_main" />
+        </TableRow>
+
+    </com.example.hub_os_device.ui.components.GridRadioGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/next_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/orange_color"
+        android:enabled="false"
+        android:fontFamily="@font/poppins_bold"
+        android:padding="18dp"
+        android:text="@string/next"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

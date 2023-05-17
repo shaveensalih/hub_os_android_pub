@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    tools:context=".ui.mainActivity.fragments.QrCodeFragment">
+
+    <ImageView
+        android:id="@+id/qrCodeIV"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:padding="2dp"
+        app:contentDescription="@string/qr_code_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/menuTV"
+        style="@style/standard_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/tap_for_menu"
+        app:autoSizeMaxTextSize="16sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@id/table_num_tv"
+        app:layout_constraintLeft_toRightOf="@id/qrCodeIV"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/qrCodeIV" />
+
+    <TextView
+        android:id="@+id/table_num_tv"
+        style="@style/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/emptyString"
+        android:textColor="@color/hub_accent_color_main"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toBottomOf="@id/qrCodeIV"
+        app:layout_constraintLeft_toRightOf="@id/qrCodeIV"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menuTV" />
+
+    <TextView
+        android:id="@+id/wifi_name_tv"
+        style="@style/standard_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="0dp"
+        android:shadowColor="#40000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="6"
+        android:text="@string/emptyString"
+        android:textSize="12sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/wifi_code_tv"
+        app:layout_constraintLeft_toRightOf="@id/qrCodeIV"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menuTV" />
+
+    <TextView
+        android:id="@+id/wifi_code_tv"
+        style="@style/standard_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="0dp"
+        android:shadowColor="#40000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="6"
+        android:text="@string/emptyString"
+        android:textSize="12sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/qrCodeIV"
+        app:layout_constraintLeft_toRightOf="@id/qrCodeIV"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wifi_name_tv" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

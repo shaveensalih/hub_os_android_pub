@@ -1,0 +1,174 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+android {
+    signingConfigs {
+        release {
+            storeFile file('/Users/shaveensalih/Desktop/hub_os_android_key/hub_os_android_key.jks')
+            storePassword 'Backspace23'
+            keyAlias 'huboskeyandroid'
+            keyPassword 'Backspace23'
+        }
+    }
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.hub_os_device"
+        minSdk 27
+        targetSdk 33
+        versionCode 1
+        versionName "2.0.7"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.release
+        renderscriptTargetApi 27
+        renderscriptSupportModeEnabled true
+
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file("local.properties").newDataInputStream())
+
+        buildConfigField "String", "API_KEY", "\"${properties.getProperty("API_KEY")}\""
+        buildConfigField "String", "HOROSCOPE_API_KEY", "\"${properties.getProperty("HOROSCOPE_API_KEY")}\""
+
+    }
+
+    buildTypes {
+        release {
+            debuggable false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
+
+    buildFeatures{
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation 'com.google.ar:core:1.25.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-process:2.5.1'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.4.2'
+    implementation 'androidx.test.ext:junit-ktx:1.1.5'
+    def lifecycle_version = "2.5.1"
+    def activity_version = "1.6.1"
+    def fragment_version = "1.5.5"
+    def work_version = "2.8.0"
+
+    //Core Libs
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation "androidx.preference:preference-ktx:1.2.0"
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.android.gms:play-services-fido:19.0.1'
+    implementation "androidx.activity:activity-ktx:$activity_version"
+    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+    implementation "androidx.window:window:1.1.0-alpha06"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.7.10"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    implementation 'org.javassist:javassist:3.26.0-GA'
+
+    //Local Unit Testing
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation "org.hamcrest:hamcrest-all:1.3"
+    testImplementation "androidx.arch.core:core-testing:2.2.0"
+    testImplementation "org.robolectric:robolectric:4.3.1"
+    testImplementation 'io.reactivex.rxjava2:rxjava:2.1.5'
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
+    testImplementation "com.google.truth:truth:1.1.3"
+    testImplementation "org.mockito:mockito-core:5.3.1"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.8.2"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.8.2"
+    testImplementation "org.powermock:powermock-module-junit4:2.0.9"
+    testImplementation "org.powermock:powermock-module-junit4-rule:2.0.9"
+    testImplementation "org.powermock:powermock-api-mockito2:2.0.9"
+    testImplementation "org.powermock:powermock-classloading-xstream:2.0.9"
+    testImplementation 'com.google.android.gms:play-services-analytics:18.0.2'
+    testImplementation 'org.javassist:javassist:3.26.0-GA'
+
+    //Android Testing
+    androidTestImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'org.junit.jupiter:junit-jupiter'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.0-alpha01'
+    androidTestImplementation "androidx.arch.core:core-testing:2.2.0"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
+    debugImplementation "androidx.fragment:fragment-testing:1.6.0-rc01"
+    androidTestImplementation "com.google.truth:truth:1.1.3"
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.0-alpha01'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.6.0-alpha01'
+    androidTestImplementation "org.mockito:mockito-core:5.3.1"
+    androidTestImplementation "com.linkedin.dexmaker:dexmaker-mockito:2.12.1"
+    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.44'
+    kaptAndroidTest 'com.google.dagger:hilt-android-compiler:2.44'
+
+    //Image Processing
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    kapt 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'jp.wasabeef:glide-transformations:4.3.0'
+    // If you want to use the GPU Filters
+    implementation 'jp.co.cyberagent.android:gpuimage:2.1.0'
+
+    //Dagger Hilt
+    implementation 'com.google.dagger:hilt-android:2.44'
+    kapt 'com.google.dagger:hilt-compiler:2.44.2'
+    implementation("androidx.hilt:hilt-work:1.0.0")
+    kapt "androidx.hilt:hilt-compiler:1.0.0"
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+    implementation "com.github.shyiko.skedule:skedule:0.4.0"
+    implementation "androidx.work:work-runtime-ktx:$work_version"
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+
+    //UI Libs
+    implementation 'com.github.fornewid:neumorphism:0.3.2'
+    implementation 'com.github.Dimezis:BlurView:version-2.0.3'
+    implementation 'com.jakewharton:process-phoenix:2.1.2'
+
+    //QR Code Gen
+    implementation("io.github.g0dkar:qrcode-kotlin-android:3.3.0")
+    implementation 'com.github.kenglxn.QRGen:android:3.0.1'
+    implementation 'com.google.zxing:core:3.5.1'
+
+    //Exoplayer
+    implementation 'com.google.android.exoplayer:exoplayer:2.18.3'
+
+    //Firebase
+    implementation 'com.google.gms:google-services:4.3.15'
+    implementation platform('com.google.firebase:firebase-bom:31.2.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+}
+
+kapt {
+    correctErrorTypes = true
+}
